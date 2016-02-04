@@ -1,0 +1,239 @@
+﻿@{
+    ViewBag.Title = "SignUp";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>signup</title>
+    
+        
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/registration.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"> </script>
+    <script>
+       
+        @*$(document).ready(validate)
+                function validate()
+        {
+
+           {         
+	              @*var filter =" ^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$";
+					    var arr=x.Split();
+                if(arr[0]=="." || (arr[0]<"1" || arr[0]> "9" ) || arr[0]=="-"|| arr[0]=="_" || filter.test(x)!=true)
+                {
+                    alert("Email not valid");
+                }
+                var fn = $("#fname").val();
+                var ln = $("#lname").val();
+                var t = $("#telephone").val();
+                var ad = $("#address").val();
+                var ct = $("#city").val();
+                var gn = $("#gender").val();
+                var x = $("#password").val();
+                var x1 = $("#cpassword").val();
+
+                if ($("#fname").empty())
+                {
+                    alert("First name should enter");
+                }
+
+                if ($("#lname").empty()) {
+                    alert("last name should enter");
+                }
+
+                if (t == '') {
+                    alert("telephone should enter");
+                }
+
+                if (ad == '') {
+                    alert("Address should enter");
+                }
+
+                if (ct == '') {
+                    alert("city should enter");
+                }
+
+                if (gn == '') {
+                    alert("gender should enter");
+                }
+
+                if(x1!=x)
+                {
+                    alert("Password does not  Match");
+                }
+                else{
+                    alert("SignUp successFully");
+                }
+
+            }
+        }*@
+
+
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#b12').click(function () {
+                
+                var Email = $('#email').val();
+
+                
+                $('#checking').show();
+                $.getJSON("/Account/CheckUserEmail?email=" + Email, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User already exist");
+
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                });
+
+            });
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+   
+
+    <br />
+    <form class="form-inline" style="text-align-last:center" method="post" action="/Account/SignUp">
+        <div class="form-group">
+            
+            
+            <div >
+                <label>First Name  </label>   <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" >
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            
+            <br />
+             
+            <div>
+                <label>Last Name  </label>  <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" >
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+          
+            <br />
+            
+            <div class="col-sm-10" style="margin-left:40px">
+                <label>Gender</label> 
+                <select class="form-control" id="gender" name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+
+            <br />
+            
+            <div>
+                <label>Telephone  </label>     <input type="number" name="telephone" class="form-control" id="telephone" placeholder="telephone" >
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+
+            <br />
+            
+            <div>
+                <label>Address  </label>       <input type="text" name="address" class="form-control" id="address" placeholder="Address" style="margin-left:15px" >
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+
+            <br />
+            
+            <div>
+                <label>Email  </label>   <input type="email" name="email" class="form-control" id="email" placeholder="Email" style="margin-left:15px" >
+                <input type="button" id="b12" value="Check" />
+            </div>
+            <div id="checking">checking...</div>
+            <div id="result"></div>
+            
+        </div>
+        <br />
+        <div class="form-group">
+           
+            <br />
+            
+           
+            <div class="col-sm-10" style="margin-left:40px">
+                <label>City</label>
+                <select class="form-control" id="city" name="city">
+                    <option>Lahore</option>
+                    <option>Karachi</option>
+                    <option>islamabad</option>
+                    <option>Faisalabad</option>
+                    <option>peshawar</option>
+                    <option>Quetta</option>
+
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+
+            <br />
+           
+            <div>
+                <label>Password</label>   <input type="password" name="password" class="form-control" id="password" placeholder="password" >
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+
+            <br />
+           
+            <div>
+                <label>Confirm Password</label>     <input style="margin-right:50px" type="password" name="cpassword" class="form-control" id="cpassword" placeholder="confirm password" >
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+               
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" onclick="validate()" class="btn btn-default" name="submt" id="submt">Sign Up</button>
+
+            </div>
+            
+            <h3 align="center">@ViewBag.status</h3>
+        </div>
+    </form>
+
+
+
+
+    
+    
+</body>
+</html>

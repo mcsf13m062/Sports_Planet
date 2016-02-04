@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "paymentMethod";
+}
+
+<html>
+<head>
+    <title>
+    </title>
+    <style>
+        #d1 {
+            height: 105px;
+            width: 155px;
+            margin-top: 50px;
+        }
+
+        #d2 {
+            height: 105px;
+            width: 155px;
+        }
+
+        #d3 {
+            height: 105px;
+            width: 155px;
+            margin-top: 50px;
+        }
+
+        #outerdiv {
+            width: 1000px;
+            height: auto;
+            margin-left: 500px;
+        }
+
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Please select your payment mehtod</h1>
+    <div id="outerdiv">
+
+        <div id="d2"> <a href="/Account/paymentDetail"><img src="~/Content/images/Maestro_logo.svg.png" height="100" width="150"></a></div>
+        <div id="d1"><a href="/Account/paymentDetail"><img src="~/Content/images/VISA_Logo.png" height="100" width="150"></a></div>
+        <div id="d3"> <a href="/Account/paymentDetail"><img src="~/Content/images/MasterCard_Logo.svg.png" height="100" width="150"></a></div>
+    </div>
+
+</body>
+</html>

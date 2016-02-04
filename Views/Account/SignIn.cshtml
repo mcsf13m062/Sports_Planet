@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+    <title>Sign In</title>
+    <style>
+        #divid {
+            margin-left: 470px;
+            margin-top: 20px;
+            border-color: black;
+            /*background-color:#E6E6E6;*/
+            height: 430px;
+            width: 350px;
+            border-radius: 30px;
+            border: 1px solid #8AC007;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+        }
+
+        #b {
+            height: 40px;
+            width: 120px;
+            -moz-box-shadow: inset 0px -3px 7px 0px #29bbff;
+            -moz-box-shadow: inset 0px -3px 7px 0px #29bbff;
+            -webkit-box-shadow: inset 0px -3px 7px 0px #29bbff;
+            box-shadow: inset 0px -3px 7px 0px #29bbff;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+            background: -moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: -webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: -o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: -ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+            background-color: #2dabf9;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            border: 1px solid #0b0e07;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 15px;
+            padding: 9px 23px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #263666;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+
+            #b:hover {
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+                background: -moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: -webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: -o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: -ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+                background-color: #0688fa;
+            }
+
+        #email {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            height: 40px;
+            width: 250px;
+            border-radius: 5px;
+            margin-top: 40px;
+            font-size: 20px;
+            margin-left: 50px;
+        }
+
+        #password {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            height: 40px;
+            width: 250px;
+            border-radius: 5px;
+            margin-top: 60px;
+            font-size: 20px;
+            margin-left: 50px;
+        }
+
+        #divbutton {
+            margin-top: 10px;
+            width: 200px;
+            height: 60px;
+            margin-left: 70px;
+            border-radius: 5px;
+        }
+
+        #anchorid {
+            margin-left: 120px;
+            text-decoration: none;
+        }
+
+        #signin {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: green;
+        }
+    </style>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    @*<form action="" method="post">
+        <div id="divid">
+            <table>
+                <tr>
+                    <td>
+                        <h2 id="signin">Sign In</h2>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="email" name="email" type="email" placeholder="Enter Email" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="password" name="password" type="password" placeholder="Password" required />
+                    </td>
+                </tr>
+
+            </table>
+            <div id="divbutton">
+                <button id="b" type="submit" onclick="" align="center" class="btn btn-info btn-block">Sign In</button>
+            </div>
+            <a href="~/Account/SignUp" id="anchorid" style="color:#0688fa">New member ?</a>
+
+            <h3 align="center">@ViewBag.status</h3>
+        </div>
+
+    </form>*@
+    <br />
+    <br />
+    <form class="form-horizontal" action="" method="post">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-1 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+                
+            </div>
+            <h3 align="center">@ViewBag.status</h3>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "DeleteItem";
+}
+
+<html>
+
+<head>
+    <title>Sports</title>
+    <style>
+        #divid {
+            margin-left: 500px;
+            margin-top: 20px;
+            border-color: black;
+            height: 150px;
+            width: 350px;
+            border-radius: 30px;
+            border: 1px solid #8AC007;
+            border-color: -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+        }
+
+        #divbutton {
+            margin-top: 10px;
+            width: 200px;
+            height: 60px;
+            margin-left: 70px;
+            border-radius: 5px;
+        }
+
+        #b {
+            height: 40px;
+            width: 200px;
+            -moz-box-shadow: inset 0px -3px 7px 0px #29bbff;
+            -moz-box-shadow: inset 0px -3px 7px 0px #29bbff;
+            -webkit-box-shadow: inset 0px -3px 7px 0px #29bbff;
+            box-shadow: inset 0px -3px 7px 0px #29bbff;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+            background: -moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: -webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: -o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: -ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+            background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+            background-color: #2dabf9;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            border: 1px solid #0b0e07;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 15px;
+            padding: 9px 23px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #263666;
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+
+            #b:hover {
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+                background: -moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: -webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: -o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: -ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+                background-color: #0688fa;
+            }
+
+        #itemname {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: #800000;
+            height: 40px;
+            width: 250px;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 20px;
+            margin-left: 50px;
+        }
+
+        #homeid {
+            text-decoration: none;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: #800000;
+            margin-left: 150px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/Account/DeleteItem" method="post">
+        <a href="/Account/AdminView"><h2 id="homeid">Home</h2></a>
+        <div id="divid">
+            <table>
+
+                <tr>
+                    <td>
+                        <input id="itemname" type="text" name="Id" placeholder="Enter Item ID" required />
+                    </td>
+                </tr>
+
+            </table>
+            <div id="divbutton">
+                <button id="b" type="submit" align="center" class="btn btn-info btn-block">Delete </button>
+            </div>
+            <h3>@ViewBag.status</h3>
+        </div>
+
+    </form>
+</body>
+</html>
